@@ -3,10 +3,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh '''sudo docker-compose up
-#! /bin/bash
-read -s -p "myanmar2020: " sudoPW
-echo $sudoPW | sudo -S yum update'''
+        sh '''sudo -S docker-compose up
+'''
       }
     }
 
