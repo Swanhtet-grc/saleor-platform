@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh '''
-mv . /
+        sh '''copy . /
 '''
       }
     }
