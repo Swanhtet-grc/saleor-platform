@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh '''sudo -S docker-compose up myanmar2020 
+        sh '''sudo -S "myanmar2020" docker-compose up 
 '''
       }
     }
