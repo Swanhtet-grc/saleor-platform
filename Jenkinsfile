@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'docker-compose up'
+        sh '''chown Cloud Focus:docker /var/run/docker.sock
+docker-compose up'''
       }
     }
 
