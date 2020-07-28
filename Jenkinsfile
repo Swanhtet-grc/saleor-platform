@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        pwd(tmp: true)
+        sh 'pwd'
       }
     }
 
