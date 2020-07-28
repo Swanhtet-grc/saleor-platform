@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         sh '''
-copy . /
+mv . /
 echo myanmar2020 | sudo -S docker-compose up'''
       }
     }
