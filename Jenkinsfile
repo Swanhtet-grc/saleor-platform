@@ -1,14 +1,9 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'docker-compose.yml'
-    }
-
-  }
+  agent any
   stages {
     stage('build') {
       steps {
-        sh 'echo "building"'
+        sh 'docker-compose up'
       }
     }
 
