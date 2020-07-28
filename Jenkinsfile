@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh '''
 mv . /
-echo myanmar2020 | sudo -S docker-compose up'''
+'''
       }
     }
 
