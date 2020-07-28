@@ -1,7 +1,7 @@
 pipeline {
   agent {
     dockerfile {
-      filename 'docker-compose.yml'
+      filename 'Dockerfile'
     }
 
   }
