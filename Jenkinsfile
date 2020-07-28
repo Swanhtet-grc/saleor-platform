@@ -9,6 +9,6 @@ any
           sh 'mvn clean compile'
       }
     }
-
+    }
   }
 }
