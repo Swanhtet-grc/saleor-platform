@@ -1,11 +1,18 @@
 FROM ubuntu:18.04
 
 COPY . /app
-RUN apt-get update && \
-    apt-get -y install sudo
-RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+RUN apt-get update \
+ && apt-get install -y sudo
+
+RUN adduser --disabled-password --gecos '' docker
+RUN adduser docker sudo
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
 USER docker
-CMD /bin/bash
+
+# this is where I was running into problems with the other approaches
+RUN sudo apt-get update 
+
 RUN apt install curl
 RUN curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
