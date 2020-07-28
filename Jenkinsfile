@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh '''pwd 
-ls'''
+        sh 'sudo docker-compose up'
       }
     }
 
