@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'saleor-platform'
+    dockerfile {
+      filename 'docker-compose.yml'
     }
 
   }
