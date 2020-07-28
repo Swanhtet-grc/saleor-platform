@@ -1,14 +1,10 @@
 pipeline {
-  agent {
-    docker {
-      image 'saleor-platform'
-    }
-
-  }
+  agent any
   stages {
     stage('build') {
       steps {
-        echo 'yes'
+        sh '''pwd 
+ls'''
       }
     }
 
