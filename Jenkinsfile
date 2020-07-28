@@ -7,11 +7,5 @@ pipeline {
       }
     }
 
-    stage('') {
-      steps {
-        sh 'docker-compose up'
-      }
-    }
-
   }
 }
