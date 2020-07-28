@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'saleor-platform'
+    }
+
+  }
   stages {
     stage('build') {
       steps {
