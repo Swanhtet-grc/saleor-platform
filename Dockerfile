@@ -16,4 +16,5 @@ RUN sudo apt-get update
 RUN sudo apt install curl -y
 RUN sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 RUN sudo chmod +x /usr/local/bin/docker-compose 
+RUN cd ./app
 RUN sudo docker-compose up
