@@ -1,16 +1,14 @@
-FROM ubuntu:18.04
 
-WORKDIR /app
-COPY . /app
-
+FROM jenkins:1.596
+ 
+USER root
 RUN apt-get update \
- && apt-get install -y sudo
-
-RUN adduser --disabled-password --gecos '' docker
-RUN adduser docker sudo
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-
-
-USER docker
-RUN sudo usermod -a -G docker docker
+      && apt-get install -y sudo \
+      && rm -rf /var/lib/apt/lists/*
+RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
+ 
+USER jenkins
+COPY plugins.txt /usr/share/jenkins/plugins.txt
+RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
+RUN docker container ls
 
