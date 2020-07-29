@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         sh '''ls
-docker container ls'''
+docker-compose build'''
       }
     }
 
