@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh '''ls
-docker-compose build'''
+        sh '''
+docker-compose up'''
       }
     }
 
