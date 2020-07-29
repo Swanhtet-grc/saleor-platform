@@ -10,10 +10,12 @@ RUN adduser --disabled-password --gecos '' docker
 RUN adduser docker sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-USER docker
-RUN groups
-RUN sudo usermod -a -G docker docker
 
+USER docker
+
+RUN sudo usermod -a -G docker docker
+RUN sudo systemctl start docker  
+RUN 
 
 
 # this is where I was running into problems with the other approaches
@@ -24,5 +26,5 @@ RUN sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/doc
 RUN sudo chmod +x /usr/local/bin/docker-compose 
 
 RUN cd /app
-RUN sudo systemctl start docker  
+
 RUN sudo docker-compose up
