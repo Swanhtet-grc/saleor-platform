@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         sh '''ls
-cd ./saleor
+cd saleor
 ls
 docker-compose up'''
       }
