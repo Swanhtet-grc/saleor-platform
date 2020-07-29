@@ -1,14 +1,10 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'Dockerfile'
-    }
-
-  }
+  agent any
   stages {
     stage('build') {
       steps {
-        sh 'echo "hello"'
+        sh '''ls
+docker container ls'''
       }
     }
 
