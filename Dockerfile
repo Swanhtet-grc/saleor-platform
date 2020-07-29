@@ -1,2 +1,2 @@
-FROM unbutu:18.04
+FROM ubuntu:18.04
 RUN docker-compose build
