@@ -12,14 +12,11 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 
 USER docker
-RUN sudo apt install snapd -y
-RUN sudo snap install docker 
+RUN sudo apt-get update
+RUN sudo apt-get install docker-ce docker-ce-cli containerd.io
 RUN sudo usermod -a -G docker docker
 RUN docker container ls
 
-
-
-# this is where I was running into problems with the other approaches
 RUN sudo apt-get update 
 
 RUN sudo apt install curl -y
