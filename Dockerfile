@@ -12,6 +12,7 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 
 USER docker
+RUN sudo apt install snapd
 RUN sudo snap install docker
 RUN sudo usermod -a -G docker docker
 RUN docker container ls
