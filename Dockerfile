@@ -14,8 +14,10 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER docker
 
 RUN sudo usermod -a -G docker docker
+RUN sudo apt-get install systemd
 RUN sudo systemctl start docker  
-RUN 
+RUN docker container ls
+
 
 
 # this is where I was running into problems with the other approaches
