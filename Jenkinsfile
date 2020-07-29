@@ -5,6 +5,7 @@ pipeline {
       steps {
         sh '''ls
 cd saleor
+pwd
 ls
 docker-compose up'''
       }
