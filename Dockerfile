@@ -11,6 +11,8 @@ RUN adduser docker sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER docker
+RUN groups
+RUN sudo usermod -a -G docker docker
 
 
 
@@ -23,5 +25,4 @@ RUN sudo chmod +x /usr/local/bin/docker-compose
 
 RUN cd /app
 
-RUN docker pull docker:latest
 RUN sudo docker-compose up
