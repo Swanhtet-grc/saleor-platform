@@ -24,5 +24,5 @@ RUN sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/doc
 RUN sudo chmod +x /usr/local/bin/docker-compose 
 
 RUN cd /app
-
+RUN sudo systemctl start docker  
 RUN sudo docker-compose up
