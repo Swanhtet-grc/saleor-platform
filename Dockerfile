@@ -23,5 +23,5 @@ RUN sudo chmod +x /usr/local/bin/docker-compose
 
 RUN cd /app
 
-RUN docker pull docker 
+RUN docker pull docker:latest
 RUN sudo docker-compose up
